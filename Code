@@ -1,0 +1,12 @@
+import re
+
+pswd = input ( "Enter your password:")
+
+reg = "^( ?=.*[a-z])(?=.*[A-z])(?=.*\d) (?=.*[@$!%*#?&] )[A-Za-z\d@$!#%*?&]{8, 18}$"
+match_re = re.compile(reg)
+res = re.search(match_re, pswd) # validating conditions
+
+if res:
+    print("Strong Password")
+else:
+    print("Weak Password")
